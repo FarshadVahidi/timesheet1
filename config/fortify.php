@@ -132,7 +132,7 @@ return [
     */
 
     'features' => [
-        Features::registration(),
+        // Features::registration(),   // disable registration for this project
         Features::resetPasswords(),
         // Features::emailVerification(),
         Features::updateProfileInformation(),
