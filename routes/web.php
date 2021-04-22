@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::group(['middleware' => ['auth:sanctum', 'verified']], function(){
+   Route::get('/dashboard', [\App\Http\Controllers\Controller::class, 'index'])->name('dashboard');
+});
